@@ -20,8 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
 
-# Gcam
-$(call inherit-product, packages/apps/googlecamera/config.mk)
+# Inherit packages from vendor/oneplus/addons/camera
+$(call inherit-product, vendor/oneplus/addons/camera/camera-vendor.mk)
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
@@ -192,7 +192,6 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
-    Snap \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 # Common init scripts
